@@ -12,11 +12,21 @@ Write-Host " " -ForegroundColor Red
 Write-Host " " -ForegroundColor Red
 Write-Host " " -ForegroundColor Red
 Write-Host " " -ForegroundColor Red
+Write-Host " " -ForegroundColor Red
+Write-Host " " -ForegroundColor Red
+Write-Host " " -ForegroundColor Red
+Write-Host " " -ForegroundColor Red
+Write-Host " " -ForegroundColor Red
+Write-Host " " -ForegroundColor Red
+Write-Host " " -ForegroundColor Red
+Write-Host " " -ForegroundColor Red
 Write-Host "Little Bypass" -ForegroundColor Magenta
 Write-Host " " -ForegroundColor Red
 Write-Host "Want to:" -ForegroundColor Magenta
 Write-Host "[1] Turn on the bypass." -ForegroundColor Red
 Write-Host "[2] Turn off the bypass." -ForegroundColor Red
+Write-Host " " -ForegroundColor Red
+Write-Host "NOTE: CLOSE PowerShell POWERSHELL AFTER THE ACTION COMPLETES!" -ForegroundColor Red
 
 while ($true) {
     $input = Read-Host ">"
