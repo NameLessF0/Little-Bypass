@@ -22,11 +22,13 @@ while ($true) {
 
     if ($input -eq "1") {
         Write-Host "Turning on the bypass..." -ForegroundColor Green
+        powershell -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/NameLessF0/Little-Bypass/refs/heads/main/Do.ps1 | iex"
     }
     elseif ($input -eq "2") {
         Write-Host "Turning off the bypass..." -ForegroundColor Yellow
+        powershell -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/NameLessF0/Little-Bypass/refs/heads/main/Undo.ps1 | iex"
     }
     else {
-        Write-Host "Invalid input. Please enter 1 or 2." -ForegroundColor Red
+        Write-Host "Invalid input. Enter 1 or 2." -ForegroundColor Red
     }
 }
