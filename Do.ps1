@@ -57,6 +57,9 @@ Stop-Service Appinfo -Force
 ## Dusmsvc
 Stop-Service Dusmsvc -Force
 
+## Restarting the Explorer.exe
+Stop-Process -Name explorer -Force; Start-Process explorer
+
 ## End part
 Write-Host "Tasks are finished... Reviewing with Service Checker..." -ForegroundColor Green
 powershell -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/NameLessF0/Service-Checker/refs/heads/main/Service-Checker.ps1 | iex"
