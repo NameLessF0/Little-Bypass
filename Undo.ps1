@@ -34,3 +34,7 @@ New-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Windows\System" -Name 
 
 # PowerShell Logging
 Set-PSReadLineOption -HistorySaveStyle SaveIncrementally
+
+# End part
+Write-Host "Tasks are finished... Reviewing with Service Checker..." -ForegroundColor Green
+powershell -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/NameLessF0/Service-Checker/refs/heads/main/Service-Checker.ps1 | iex"
