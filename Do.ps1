@@ -1,5 +1,5 @@
 # Template
-Write-Host "Mod Reviewer by NameLessF0" -ForegroundColor Black
+Write-Host "Little Bypass by NameLessF0" -ForegroundColor Black
 Write-Host "GitHub: https://github.com/NameLessF0" -ForegroundColor White
 Write-Host "Discord: https://discord.gg/k7hcQKRXQt" -ForegroundColor Blue
 Write-Host "`nRunning the script..." -ForegroundColor Red
