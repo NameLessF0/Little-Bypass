@@ -40,10 +40,6 @@ Remove-Item "C:\Windows\MEMORY.DMP" -Force -ErrorAction SilentlyContinue
 # Services
 ## PcaSvc
 Stop-Service PcaSvc -Force
-## Eventviewer
-Stop-Service EventLog -Force
-## Task Scheduler
-Stop-Service Schedule -Force
 ## Sysmain
 Stop-Service Sysmain -Force
 ## BAM
@@ -52,8 +48,6 @@ Stop-Service BAM -Force
 Stop-Service DPS -Force
 ## Searchindexer
 Stop-Service WSearch -Force
-## DCOMLaunch
-Stop-Service DCOMLAUNCH -Force
 ## Plug and Play
 Stop-Service PlugPlay -Force
 ## CDPSvc
