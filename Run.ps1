@@ -13,7 +13,7 @@ Write-Host " " -ForegroundColor Red
 Write-Host " " -ForegroundColor Red
 Write-Host " " -ForegroundColor Red
 Write-Host "Little Bypass" -ForegroundColor Magenta
-Write-Host "Want to:" ForegroundColor DarkMagenta
+Write-Host "Want to:" ForegroundColor Yellow
 Write-Host "[1] Turn on the bypass." -ForegroundColor Red
 Write-Host "[2] Turn off the bypass." -ForegroundColor Red
 
