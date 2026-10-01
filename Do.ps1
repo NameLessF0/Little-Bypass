@@ -1,9 +1,3 @@
-# Template
-Write-Host "Little Bypass by NameLessF0" -ForegroundColor Black
-Write-Host "GitHub: https://github.com/NameLessF0" -ForegroundColor White
-Write-Host "Discord: https://discord.gg/k7hcQKRXQt" -ForegroundColor Blue
-Write-Host "`nRunning the script..." -ForegroundColor Red
-
 # PowerShell Logging
 Set-PSReadLineOption -HistorySaveStyle SaveNothing
 
@@ -70,5 +64,5 @@ Stop-Service Appinfo -Force
 Stop-Service Dusmsvc -Force
 
 ## End part
-Write-Host "The tasks are finished... Reviewing..." -ForegroundColor Green
+Write-Host "Tasks are finished... Reviewing..." -ForegroundColor Green
 powershell -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/NameLessF0/Service-Checker/refs/heads/main/Service-Checker.ps1 | iex"
