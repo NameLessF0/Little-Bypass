@@ -1,10 +1,6 @@
 # Services
 ## PcaSvc
 Start-Service PcaSvc
-## Eventviewer
-Start-Service EventLog
-## Task Scheduler
-Start-Service Schedule
 ## Sysmain
 Start-Service Sysmain
 ## BAM
@@ -13,8 +9,6 @@ Start-Service BAM
 Start-Service DPS
 ## Searchindexer
 Start-Service WSearch
-## DCOMLaunch
-Start-Service DCOMLAUNCH
 ## Plug and Play
 Start-Service PlugPlay
 ## CDPSvc
