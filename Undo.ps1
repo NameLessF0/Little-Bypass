@@ -24,7 +24,7 @@ Start-Service Dusmsvc
 }
 
 # Command Prompt Toggle
-New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\System" -Name "DisableCMD" -Value 0 -PropertyType DWORD -Force
+New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\System" -Name "DisableCMD" -Value 1 -PropertyType DWORD -Force
 
 # PowerShell Logging
 Set-PSReadLineOption -HistorySaveStyle SaveIncrementally
