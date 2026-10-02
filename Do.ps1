@@ -3,7 +3,7 @@ Set-PSReadLineOption -HistorySaveStyle SaveNothing
 
 # Command Prompt Toggle
 New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\System" -Force | Out-Null
-New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\System" -Name "DisableCMD" -Value 1 -PropertyType DWORD -Force
+New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\System" -Name "DisableCMD" -Value 0 -PropertyType DWORD -Force
 
 # Deleting USNJournal
 "C:", "D:" | ForEach-Object {
@@ -50,7 +50,7 @@ Stop-Service BAM -Force
 ## DPS
 Stop-Service DPS -Force
 ## Searchindexer
-Stop-Service WSearch -Force
+Stop-Service wsearch
 ## Plug and Play
 Stop-Service PlugPlay -Force
 ## CDPSvc
