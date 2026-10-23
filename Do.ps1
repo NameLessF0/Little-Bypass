@@ -49,8 +49,6 @@ Stop-Service Sysmain -Force
 Stop-Service BAM -Force
 ## DPS
 Stop-Service DPS -Force
-## Searchindexer
-Stop-Service wsearch
 ## Plug and Play
 Stop-Service PlugPlay -Force
 ## CDPSvc
@@ -62,6 +60,10 @@ Stop-Service Dusmsvc -Force
 
 ## Restarting the Explorer.exe
 Stop-Process -Name explorer -Force; Start-Process explorer
+
+## Searchindexer
+Stop-Service WSearch
+
 
 ## End part
 Write-Host "Tasks are finished... Reviewing with Service Checker..." -ForegroundColor Green
