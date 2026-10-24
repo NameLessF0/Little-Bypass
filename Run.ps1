@@ -1,5 +1,5 @@
 # Start
-Write-Host "Little Bypass by NameLessF0" -ForegroundColor Black
+Write-Host "Little Bypass by NameLessF0" -ForegroundColor Magenta
 Write-Host "GitHub: https://github.com/NameLessF0" -ForegroundColor White
 Write-Host "Discord: https://discord.gg/k7hcQKRXQt" -ForegroundColor Blue
 Write-Host "`nRunning the script..." -ForegroundColor Red
